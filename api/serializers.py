@@ -14,6 +14,8 @@ class StdImageSerializer(serializers.ImageField):
         return self.get_variations_urls(obj)
 
     def to_representation(self, obj):
+        if not obj:
+            return None
         return self.get_variations_urls(obj)
 
     def get_variations_urls(self, obj):
