@@ -53,8 +53,8 @@ class StdImageSerializer(serializers.ImageField):
 class NameISOSerializer(serializers.ModelSerializer):
     name = serializers.SerializerMethodField()
     title = serializers.SerializerMethodField()
-    short_description = serializers.SerializerMethodField()
     description = serializers.SerializerMethodField()
+    short_description = serializers.SerializerMethodField()
     position = serializers.SerializerMethodField()
 
     def get_title(self, obj):

@@ -3,7 +3,7 @@ from django.core.exceptions import ValidationError
 from django.contrib.auth.models import AbstractUser
 
 
-class MyUser(AbstractUser):
+class Account(AbstractUser):
     """
     Users within the Django authentication system are represented by this
     model.
@@ -17,13 +17,13 @@ class MyUser(AbstractUser):
         if not self.pk:
             if self.email:
                 try:
-                    MyUser.objects.get(email=self.email)
+                    Account.objects.get(email=self.email)
                     raise ValidationError({'email': f'{self.email} почта уже существует' })
-                except MyUser.DoesNotExist:
+                except Account.DoesNotExist:
                     pass
         else:
             if self.email:
-                mu = MyUser.objects.filter(email=self.email).exclude(id=self.pk)
+                mu = Account.objects.filter(email=self.email).exclude(id=self.pk)
                 if mu.count() > 0:
                     raise ValidationError({'email': f'{self.email} почта уже существует' })
 
