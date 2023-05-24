@@ -2,7 +2,7 @@
 
 ## Project Setup
 
-* [Python 3.11.2](https://www.python.org/downloads/release/python-3112/).
+* [Python 3.11.3](https://www.python.org/downloads/release/python-3112/).
 * [Virtuelenv](https://pypi.org/project/virtualenv/).
 
 ### requirements
@@ -22,7 +22,7 @@
 
 ### django-template
 
-```python
+```shell
 mkdir project_name
 python -m virtualenv venv
 source venv/bin/activate
